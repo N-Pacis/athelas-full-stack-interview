@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title><%= title %></title>
 </head>
 <body>
-    <h2><%= title %> </h2>
+    <h2 class="app-title"><%= title %> </h2>
     <% if(error) { %>
         <p><%= error %></p>
     <% } %>
     
-    <a href="/add">Add Product</a>
+    <a href="/add" class="add-product-btn">Add Product</a>
     <table>
         <thead>
             <tr>
@@ -30,9 +31,9 @@
                     <td><%= product.name %></td>
                     <td><%= product.price %></td>
                     <td><%= product.description %></td>
-                    <td><a href="/view/<%= product.id %>">View</a></td>
-                    <td><a href="/edit/<%= product.id %>">Edit</a></td>
-                    <td><a href="/delete/<%= product.id %>">Delete</a></td>
+                    <td><a href="/view/<%= product.id %>" class="view-btn">View</a></td>
+                    <td><a href="/edit/<%= product.id %>" class="edit-btn">Edit</a></td>
+                    <td><a href="/delete/<%= product.id %>" class="delete-btn">Delete</a></td>
                 </tr>
             <% })%>
         </tbody>
