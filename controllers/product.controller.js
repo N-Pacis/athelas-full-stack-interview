@@ -65,6 +65,16 @@ export const renderAddProduct = (req, res) => {
 
 export const createProduct = async (req, res) => {
     try{
+        if(req.file == { } || req.file == undefined || req.file == null){
+            res.render('product_create',{
+                title: 'Create Product',
+                body: req.body,
+                error: "A product should have an image"
+            })    
+        }
+        console.log(req.file)
+        req.body.image = (req.file.path.replace("\\","/")).replace(" ","%20")
+
         const SQL = "INSERT INTO products SET ?"
         connection.query(SQL,req.body,(err,result)=>{
             if(err){

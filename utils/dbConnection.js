@@ -14,7 +14,7 @@ export default function dbConnection() {
             console.log(err)
         } else {
             console.log("Connected to database")
-            let SQL = "CREATE TABLE IF NOT EXISTS products( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, price INT NOT NULL, description VARCHAR(255) NOT NULL)";
+            let SQL = "CREATE TABLE IF NOT EXISTS products( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, price INT NOT NULL, description VARCHAR(255) NOT NULL, image VARCHAR(255) NOT NULL)";
             dbConnect.query(SQL,(err,result)=>{
                 if(err){
                     console.log(err)
